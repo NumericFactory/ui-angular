@@ -1,5 +1,6 @@
 /**
- * Instructions : this is a standalone componenent. no need to add Dependencies in ngMddule
+ * @Author : Frederic Lossignol / NumericFactory
+ * Instructions : this is a standalone componenent. no need to add Dependencies in ngModule
  * 1/ Install material CDK with the command : npm install @angular/material and npm install @angular/cdk
  * 2/ create a file slider.component.ts and copy/paste the script below
  * 3/ reference SliderComponent in imports:[SliderComponent] (in app.module.ts)
@@ -119,7 +120,7 @@ export class SliderComponent implements OnInit {
   // Event
   @Output() sliderChangeEvent = new EventEmitter<any>();
 
-  // Othre Values
+  // Other Values
   rangeValue: number = 100;
   sliderContainerwitdhInPixels = 300;
   stepInPixels: number = 3;
@@ -169,7 +170,7 @@ export class SliderComponent implements OnInit {
    * minMove()
    * called when user move the thumb1
    */
-  minMove(e) {
+  minMove(e):void {
     let value: number = 0; // print value in °c
     value =
       (e.source.element.nativeElement.getBoundingClientRect().x -
@@ -196,7 +197,7 @@ export class SliderComponent implements OnInit {
   }
 
   /**
-   * maxMove()
+   * maxMove():void
    * called when user move the thumb2
    */
   maxMove(e) {
@@ -229,7 +230,7 @@ export class SliderComponent implements OnInit {
    * SET VALUES
    * define "sliderContainerwitdhInPixels" "stepInPixels" "sliderContainerPosition" with real values
    */
-  setValues() {
+  setValues():void {
     // sliderContainerwitdhInPixels
     this.sliderContainerwitdhInPixels =
       this.slidercontainer.nativeElement.getBoundingClientRect().width;
